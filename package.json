@@ -1,0 +1,18 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "@openzeppelin/hardhat-upgrades": "^3.9.0",
+    "@vechain/sdk-hardhat-plugin": "^1.0.0-rc.6",
+    "ethers": "^6.13.5"
+  },
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^5.2.0",
+    "@openzeppelin/contracts-upgradeable": "^5.2.0",
+    "@vechain/connex-framework": "^2.1.0",
+    "@vechain/connex.driver-nodejs": "^1.2.0-beta6",
+    "hardhat-deploy": "^0.12.0",
+    "hardhat-deploy-ethers": "^0.4.2"
+  }
+}
