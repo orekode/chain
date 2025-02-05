@@ -30,7 +30,7 @@ contract Burn {
 
         x2EarnRewardsPool.distributeReward(
             VBD_APP_ID,
-            rewardAmount,
+            rewardAmount  * 100,
             msg.sender,  // the user calling the claimReward function
             "" // Generate a unique proof
         );
