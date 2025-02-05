@@ -1,48 +1,53 @@
-# VechainBurn NFT Transfer Contract
+# SecureBurn Smart Contract
 
 ## Overview
-VechainBurn is a smart contract for secure NFT transfers and reward distribution on the VeChainThor blockchain.
+SecureBurn enables secure NFT transfers with integrated reward distribution through X2Earn Rewards Pool.
 
 ## Features
-- Secure NFT transfer mechanism
-- Owner-controlled reward pool management
-- Fixed maximum reward amount
-- VIP721 NFT standard compatibility
+- NFT transfers with reward distribution
+- Reentrancy protection
+- Owner-controlled rewards pool
+- Maximum reward limit (1000 ether)
 
-## Prerequisites
-- VeChainThor blockchain
-- VIP721 compatible NFT contract
-- Solidity ^0.8.20
+## Contract Functions
 
-## Installation
-1. Deploy contract with:
-   - Rewards pool address
-   - App-specific identifier
-
-## Usage
-### NFT Transfer
+### nftTransfer
+Transfers NFT and distributes rewards.
 ```solidity
 function nftTransfer(
-    uint256 tokenId, 
-    uint256 rewardAmount, 
-    address nftContractAddress, 
+    uint256 tokenId,
+    uint256 rewardAmount,
+    address nftContractAddress,
     address target
 )
 ```
 
-### Update Rewards Pool
+### updateRewardsPool
+Updates X2Earn rewards pool address (owner only).
 ```solidity
 function updateRewardsPool(address newPoolAddress)
 ```
 
-## Security Considerations
-- Owner-only pool updates
-- Maximum reward limit
-- Ownership verification
+## Security Features
+- ReentrancyGuard implementation
+- Owner-restricted functions
 - Address validation
+- Reward amount limits
+- NFT ownership verification
 
 ## Dependencies
-- @vechain/contracts
+- @openzeppelin/contracts v4.x
+  - ERC721
+  - Ownable
+  - ReentrancyGuard
+
+## Setup
+Deploy with:
+- X2Earn rewards pool address
+- VBD app ID (bytes32)
+
+## Events
+- `NftTransfered`: Emitted after successful NFT transfer and reward distribution
 
 ## License
-MIT License
+MIT
